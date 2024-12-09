@@ -14,15 +14,17 @@ class MP10 {
 					bw.write(line+"\n");
 					line = br.readLine();
 				}
+				br.close();
+				bw.close();
 			}
 			catch (FileNotFoundException e) {
 				System.out.printf("파일 %s 또는 %s를 찾을 수 없습니다");
 			}
 			catch (IOException e) {
-				System.out.printf("파일 %s 또는 %s를 찾을 수 없습니다");
+				System.out.printf("파일입출력 과정에서 오류가 발생");
 			}
 			catch (Exception e) {
-				System.out.printf("파일 %s 또는 %s를 찾을 수 없습니다");
+				e.printStackTrace();
 			}
 		}
 	}
